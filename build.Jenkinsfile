@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/saeedwhamad/roberta_jenkines.git'
+                git 'https://github.com/saeedwhamad/roberta_jenkines/tree/main/roberta'
                 sh '''
                     docker build -t roberta:${BUILD_NUMBER} .
                 '''
