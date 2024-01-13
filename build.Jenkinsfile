@@ -6,7 +6,7 @@ pipeline {
             steps {
 
                 sh '''
-                    docker build -t roberta:${BUILD_NUMBER} /roberta
+                    docker build -t roberta:${BUILD_NUMBER} /roberta/
                 '''
 
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'saeedwh', passwordVariable: 'sa22edhama')]) {
