@@ -14,6 +14,7 @@ pipeline {
             docker tag roberta:${env.BUILD_ID} ${DOCKER_REGISTRY}/roberta:${env.BUILD_ID}
             docker push ${DOCKER_REGISTRY}/roberta:${env.BUILD_ID}
        '''
+
             }
         }
     }
