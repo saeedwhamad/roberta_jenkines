@@ -9,6 +9,7 @@ pipeline {
             docker build -t roberta:${BUILD_NUMBER} .
             docker tag -t roberta:${BUILD_NUMBER} saeedwh/roberta:${BUILD_NUMBER}
             docker push saeedwh/roberta:${BUILD_NUMBER}
+            echo hi
                    '''
                 }
             }
