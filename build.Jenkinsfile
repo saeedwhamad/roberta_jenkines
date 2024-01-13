@@ -2,7 +2,7 @@ pipeline {
     agent any
 
      environment {
-        DOCKER_REGISTRY = 'saeedwh'
+        DOCKER_REGISTRY = 'docker.io'
     }
 
     stages {
