@@ -8,11 +8,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+            git ‘https://github.com/saeedwhamad/roberta_jenkines/tree/main/roberta’
                    sh '''
-            docker login -u saeedwh -p sa22edhama ${DOCKER_REGISTRY}
-            docker build -t roberta:${env.BUILD_ID} .
-            docker tag roberta:${env.BUILD_ID} ${DOCKER_REGISTRY}/roberta:${env.BUILD_ID}
-            docker push ${DOCKER_REGISTRY}/roberta:${env.BUILD_ID}
+            docker build -t roberta:${BUILD_NUMBER} .
+            withCredentials([usernamePassword(credentialsId: ‘docker-hub’, usernameVariable: ‘saeedwh’, passwordVariable: ‘sa22edhama’)])
+
+           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+            docker tag roberta:${BUILD_NUMBER} saeedwh/roberta:${BUILD_NUMBER}
+            docker push saeedwh/roberta:${BUILD_NUMBER}
        '''
 
             }
