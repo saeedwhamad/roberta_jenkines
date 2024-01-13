@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/saeedwhamad/roberta_jenkines/tree/main/roberta'
+
                 sh '''
-                    docker build -t roberta:${BUILD_NUMBER} .
+                    docker build -t roberta:${BUILD_NUMBER} /roberta
                 '''
 
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'saeedwh', passwordVariable: 'sa22edhama')]) {
