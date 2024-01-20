@@ -5,6 +5,7 @@ pipeline {
         stage('Unittest') {
             steps {
                sh 'python3 -m pytest --junitxml results.xml tests'
+               echo hi
                }
                 post {
                       always {
