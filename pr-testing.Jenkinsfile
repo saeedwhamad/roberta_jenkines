@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Lint') {
             steps {
-                  echo "linting"
+                  echo "linting !!!!!"
         }
         stage('Functional test') {
             steps {
