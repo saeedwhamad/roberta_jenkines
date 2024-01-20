@@ -6,8 +6,6 @@ pipeline {
         }
     }
 
-
-}
         stage('Build') {
             steps {
 
@@ -17,7 +15,7 @@ pipeline {
             docker tag roberta:${BUILD_NUMBER} saeedwh/roberta:${BUILD_NUMBER}
             docker push saeedwh/roberta:${BUILD_NUMBER}
                    '''
-                }
             }
+
         }
     }
