@@ -3,8 +3,8 @@ pipeline {
         docker {
             image 'saeedwh/jenkinsagent:latest'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-         }
-     }
+        }
+    }
 
     stage('Build') {
         steps {
@@ -15,7 +15,7 @@ pipeline {
                 docker tag roberta:${BUILD_NUMBER} saeedwh/roberta:${BUILD_NUMBER}
                 docker push saeedwh/roberta:${BUILD_NUMBER}
                   '''
-         }
+        }
 
     }
 }
