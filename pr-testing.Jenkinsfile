@@ -10,6 +10,7 @@ pipeline {
         stage('Lint') {
             steps {
                 echo "linting"
+                echo "change"
             }
         }
         stage('Functional test') {
