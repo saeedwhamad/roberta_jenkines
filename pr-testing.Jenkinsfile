@@ -13,6 +13,7 @@ pipeline {
             steps {
                   echo "linting !!!!!"
         }
+        }
         stage('Functional test') {
             steps {
                 echo "testing"
